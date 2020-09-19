@@ -1,17 +1,23 @@
-eth=100
-solid=100
+eth_in_pool=100
+solid_in_pool=100
 
-total_eth=0
-total_solid=100
-for i in range(51):
-    price=eth/solid/1
-    print("current_price: "+str(price))
+total_eth_in_wallet=0
+total_solid_in_wallet=100
+window=0.1
+while(1):
+    price=eth_in_pool/solid_in_pool
+    print("current_price: "+str(price)+" eth/solid",end=" ")
     
-    eth-=1
-    total_eth+=1
+    eth_in_pool-=1/window
+    total_eth_in_wallet+=1/window
+    print(str(1/window)+" eth bought",end=" ")
     
-    solid+=(1/price)
-    total_solid-=(1/price)
+    solid_in_pool+=(1/price)/window
+    total_solid_in_wallet-=(1/price)/window
+    print(str(1/price/window)+" solid sold\n")
 
-print(total_eth)
-print(total_solid)
+    if(total_solid_in_wallet)<=0:
+        break
+
+print("total eth in wallet: "+str(total_eth_in_wallet))
+print("total solid in wallet: "+str(total_solid_in_wallet))
