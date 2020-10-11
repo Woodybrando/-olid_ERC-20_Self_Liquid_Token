@@ -3,7 +3,7 @@ solid_in_pool=100
 
 total_eth_in_wallet=0
 total_solid_in_wallet=100
-window=0.1
+window=2
 while(1):
     price=eth_in_pool/solid_in_pool
     print("current_price: "+str(price)+" eth/solid",end=" ")
