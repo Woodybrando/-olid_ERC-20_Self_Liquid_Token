@@ -7,5 +7,6 @@ def main():
     y = (3/2*x+p**(3/2))**(2/3)-p
     float(y)
     print('You bought ' + str(y))
-    print('For $' + str(x/y))
+    z = format((x/y), '.2f')
+    print('For $' + str(z))
 main()
